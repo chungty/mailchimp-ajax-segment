@@ -2,15 +2,18 @@ Mailchimp-Ajax-Segment
 ----------------------
 **Turn your standard Mailchimp embed form into an Ajaxy Segment call.**
 
-userId is a better way to join data at the user level across various tracking/email/etc. services.
+When all you have is an email subscription form, you end up using email address as the primary way of referring to users. This seems natural, but it breaks down quickly when you try to tie data together between your email provider and any other services.
 
-Why?
+userId, meanwhile, is the standard way to join data at the user level across various tracking/email/etc. services. But that usually requires a proper registration system that creates a new userId for every user.
 
- - userId is stable (e.g., update a user's email address from anywhere
-   by calling Segment identify with the same userId.)
- - userId is not PII (e.g., Google Analytics explicitly forbids using PII as a userId)
+Why is userId better?
 
-So, in addition to manually adding a subscriber to your Mailchimp list, this will explicitly assign a userId to each new subscriber and identify the user via Segment.
+ - userId is stable. Email addresses can and will change, but not the userId.
+ - userId is not personally identifiable information (PII). Just as an example, Google Analytics explicitly forbids using PII as a userId when pushing data to them.
+
+So, in addition to manually adding a subscriber to your Mailchimp list, this will explicitly assign a userId to each new subscriber and identify the user via Segment. Using Segment's `identify` call with an excplit userId ensures all downstream services use the same userId. Hooray!
+
+Even without a registration system, it's useful to have a consistent userId. Manybe you want to manually aggregate data later. Maybe you want to use something like Zapier to trigger an HTTP API based on another system's actions. With a consistent userId in hand, these things are actually possible.
 
 **Quick steps:**
 
