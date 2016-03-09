@@ -46,6 +46,6 @@ Built on @rydama's "mailchimp-ajax-signup" JS to submit form without redirects: 
 
 ----------
 
-[jQuery]
-[Your Segment analytics.js]
+[jQuery]  
+[Your Segment analytics.js]  
 [mailchimp-ajax-segment.js]
