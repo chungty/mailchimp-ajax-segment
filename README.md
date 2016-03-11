@@ -25,6 +25,7 @@ Even without a registration system, it's useful to have a consistent userId. Man
 Built on @rydama's "mailchimp-ajax-signup" JS to submit form without redirects: https://github.com/rydama/mailchimp-ajax-signup
 
 ----------
+Here's generally how the form code will look.
 
     <form id="subscribe-form" action="http://<your_account>.us6.list-manage.com/subscribe/post-json?u=<your value>&id=<your value>" method="get">
         <h3>Want more great content delivered to your inbox?</h3>
@@ -48,6 +49,7 @@ Built on @rydama's "mailchimp-ajax-signup" JS to submit form without redirects: 
     </form>
 
 ----------
+Elsewhere on the page, you'll need these libraries.
 
 [jQuery]  
 [Your Segment analytics.js]  
